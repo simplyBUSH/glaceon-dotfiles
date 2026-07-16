@@ -172,6 +172,7 @@
           java       = ("cd %s && javac %s && java -cp %s %s"):format(dir, vim.fn.expand("%:t"), dir, name),
           javascript = ("node %s"):format(file),
           lua        = ("lua %s"):format(file),
+          rust       = ("cd %s && cargo run"):format(dir),
           tex        = "echo 'Use <leader>ll for VimTeX compilation'",
         }
 

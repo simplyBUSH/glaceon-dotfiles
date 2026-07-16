@@ -8,9 +8,7 @@
       start-at-login = false;
 
       config-version = 2;
-      after-startup-command = [
-        "exec-and-forget borders active_color=0xff4ca0b3 inactive_color=0x00000000 width=10"
-      ];
+#      after-startup-command = [ "exec-and-forget borders active_color=0xff4ca0b3 inactive_color=0x00000000 width=10" ];
 
       workspace-to-monitor-force-assignment = {
         "1" = "main";
@@ -26,8 +24,8 @@
       };
 
       gaps = {
-        inner.horizontal = 2;
-        inner.vertical = 2;
+        inner.horizontal = 0;
+        inner.vertical = 0;
         outer.left = 1;
         outer.bottom = 1;
         outer.top = 1;

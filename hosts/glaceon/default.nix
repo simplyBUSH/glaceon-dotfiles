@@ -110,7 +110,9 @@ in
       "spotify"
       "steam"
       "tailscale-app"
+      "dolphin"
       "vesktop"
+      "ayugram"
      ];
     brews = [
       "felixkratz/formulae/borders"

@@ -88,6 +88,21 @@
           })
           vim.lsp.enable("clangd")
 
+          vim.lsp.config("rust_analyzer", {
+            capabilities = capabilities,
+            cmd          = { "rust-analyzer" },
+            filetypes    = { "rust" },
+            root_markers = { "Cargo.toml", "rust-project.json", ".git" },
+            settings     = {
+              ["rust-analyzer"] = {
+                cargo = { allFeatures = true },
+                checkOnSave = { command = "clippy" },
+                procMacro = { enable = true },
+              },
+            },
+          })
+          vim.lsp.enable("rust_analyzer")
+
           vim.diagnostic.config({
             virtual_text   = { prefix = "●", source = "if_many" },
             signs          = true,

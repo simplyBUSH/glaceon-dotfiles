@@ -71,6 +71,8 @@ in
             if [[ -z "$TMUX" && -n "$AUTO_TMUX" ]]; then
                 tmux attach-session -t auto 2>/dev/null || tmux new-session -s auto
             fi
+
+            clear && ${pkgs.hyfetch}/bin/hyfetch
           ''
     ];
   };
