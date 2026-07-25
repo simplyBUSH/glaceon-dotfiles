@@ -61,7 +61,7 @@ in
 
   users.users.bush = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "input" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "input" "uinput" ];
     home = "/home/bush";
     shell = pkgs.zsh;
   };
@@ -98,7 +98,18 @@ in
     };
     openssh.enable = true;
     tailscale.enable = true;
-  }; 
+    sunshine = {
+      enable = true;
+      autoStart = false;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
+    avahi = {
+      enable = true;
+      publish.enable = true;
+      publish.userServices = true;
+    };
+  };
 
   hardware.graphics = {
     enable = true;
@@ -107,6 +118,8 @@ in
     mesa.opencl
     ];
   };
+
+  hardware.uinput.enable = true;
 
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;

@@ -12,6 +12,7 @@
     ../nvim/lsp.nix
     ../aerospace.nix
     ../iamb.nix
+    ../sunshine.nix
   ];
 
   home.username = "bush";

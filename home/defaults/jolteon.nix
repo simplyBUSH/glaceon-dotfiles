@@ -14,6 +14,7 @@
     ../wofi.nix
     ../iamb.nix
     ../noctalia.nix
+    ../sunshine.nix
   ];
 
   home.username = "bush";

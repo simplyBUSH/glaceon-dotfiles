@@ -91,6 +91,7 @@ in
     };
     taps = [
     "TheBoredTeam/boring-notch"
+    "LizardByte/homebrew"
     ];
 
     casks = [
@@ -101,22 +102,24 @@ in
         name = "TheBoredTeam/boring-notch/boring-notch";
         trusted = true;
       })
+      "ayugram"
+      "blackhole-2ch"
+      "dolphin"
       "element"
       "firefox"
       "linearmouse"
       "mx-power-gadget"
       "pearcleaner"
-      # "skim"
       "spotify"
       "steam"
       "tailscale-app"
-      "dolphin"
       "vesktop"
-      "ayugram"
+      # "skim"
      ];
     brews = [
       "felixkratz/formulae/borders"
       "matthart1983/tap/netwatch"
+      "sunshine"
     ];
   };
 }
