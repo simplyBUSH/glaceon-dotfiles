@@ -8,27 +8,9 @@ in
   home-manager.extraSpecialArgs = { inherit accent; isJolteon = true; };
 
   environment.systemPackages = with pkgs; [
-    efibootmgr
-    element-desktop
-    fastfetch
-    ffmpeg
-    firefox
-    git
-    gping
-    hyfetch
-    mosh
-    nautilus
-    ollama-rocm
-    openvpn
-    python313
-    refind
-    speedtest-cli
-    spotify
-    steam
-    swaybg
-    uv
-    vesktop
-    wofi
+  efibootmgr
+  openvpn
+  refind
   ];
 
   nix.settings.experimental-features = "nix-command flakes";
@@ -78,6 +60,7 @@ in
     hyprland.enable = true;
     zsh.enable = true;
     dconf.enable = true;
+    steam.enable = true;
   };
 
   services = {
@@ -110,12 +93,16 @@ in
       publish.enable = true;
       publish.userServices = true;
     };
+    ollama = {
+      enable = true;
+      package = pkgs.ollama-rocm;
+    };
   };
 
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [
-    vulkan-loader
     mesa.opencl
     ];
   };

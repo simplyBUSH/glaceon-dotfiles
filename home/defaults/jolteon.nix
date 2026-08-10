@@ -14,7 +14,6 @@
     ../wofi.nix
     ../iamb.nix
     ../noctalia.nix
-    ../sunshine.nix
   ];
 
   home.username = "bush";
@@ -31,6 +30,20 @@
     tree
     wget
     curl
+    fastfetch
+    ffmpeg
+    git
+    gping
+    hyfetch
+    mosh
+    speedtest-cli
+    uv
+    element-desktop
+    firefox
+    nautilus
+    spotify
+    vesktop
+    wofi
   ];
 
   home.pointerCursor = {
