@@ -6,18 +6,7 @@ in
 {
   home-manager.extraSpecialArgs = { inherit accent; };
   environment.systemPackages = with pkgs; [
-    fastfetch
-    ffmpeg
-    git
-    gping
-    hyfetch
-    mosh
-    ollama
-    openvpn
-    python313
     raycast
-    speedtest-cli
-    uv
   ];
 
   nix.settings.experimental-features = "nix-command flakes";
@@ -90,20 +79,13 @@ in
       extraFlags = [ "--force" ];
     };
     taps = [
-    "TheBoredTeam/boring-notch"
-    "LizardByte/homebrew"
+#    "TheBoredTeam/boring-notch"
     ];
 
     casks = [
-      "affinity"
       "antigravity"
       "antigravity-cli"
-      ({
-        name = "TheBoredTeam/boring-notch/boring-notch";
-        trusted = true;
-      })
       "ayugram"
-      "blackhole-2ch"
       "dolphin"
       "element"
       "firefox"
@@ -119,7 +101,6 @@ in
     brews = [
       "felixkratz/formulae/borders"
       "matthart1983/tap/netwatch"
-      "sunshine"
     ];
   };
 }

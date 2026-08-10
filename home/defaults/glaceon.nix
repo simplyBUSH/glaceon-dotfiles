@@ -12,7 +12,6 @@
     ../nvim/lsp.nix
     ../aerospace.nix
     ../iamb.nix
-    ../sunshine.nix
   ];
 
   home.username = "bush";
@@ -20,15 +19,24 @@
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
-    ripgrep
-    fd
-    eza
-    fzf
-    jq
     btop
-    tree
-    wget
     curl
+    eza
+    fastfetch
+    fd
+    ffmpeg
+    fzf
+    git
+    gping
+    hyfetch
+    jq
+    mosh
+    ollama
+    ripgrep
+    speedtest-cli
+    tree
+    uv
+    wget
   ];
 
   programs.home-manager.enable = true;

@@ -23,7 +23,8 @@ in
     };
 
     shellAliases = {
-      cls = "clear";
+      cls = "pyroclear";
+      clear = "pyroclear";
       gc="sudo nix-collect-garbage -d && sudo nix store optimise";
       gemini="agy";
       iamb = "iamb -C ~/.config"; 
@@ -46,6 +47,7 @@ in
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
+      PATH = "$HOME/.cargo/bin:$PATH";
     } // lib.optionalAttrs isDarwin {
       CPPFLAGS = "-I/opt/homebrew/opt/openjdk/include";
       HOMEBREW_CELLAR = "/opt/homebrew/Cellar";
@@ -53,7 +55,7 @@ in
       HOMEBREW_REPOSITORY = "/opt/homebrew";
       INFOPATH = "/opt/homebrew/share/info:''${INFOPATH:-}";
       MANPATH = "/opt/homebrew/share/man:''${MANPATH:-}";
-      PATH = "/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH";
+      PATH = "/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.cargo/bin:$PATH";
     };
 
     initContent = lib.mkMerge [

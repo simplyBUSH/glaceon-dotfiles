@@ -57,6 +57,7 @@ in
     };
   };
   interfaces.enp7s0.wakeOnLan.enable = true;
+  firewall.trustedInterfaces = [ "tailscale0" ];
 };
 
   users.users.bush = {
