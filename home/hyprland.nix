@@ -58,6 +58,7 @@
       input = {
         follow_mouse = 1;
         sensitivity = 0;
+        kb_layout = "pl";
       };
 
       # Workspace switching

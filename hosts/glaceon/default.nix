@@ -97,6 +97,7 @@ in
       "tailscale-app"
       "vesktop"
       # "skim"
+      "bitwarden"
      ];
     brews = [
       "felixkratz/formulae/borders"

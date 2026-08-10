@@ -108,6 +108,7 @@ in
   };
 
   hardware.uinput.enable = true;
+  time.timeZone = "Europe/Warsaw";
 
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;

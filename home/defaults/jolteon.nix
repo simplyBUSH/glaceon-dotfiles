@@ -21,28 +21,29 @@
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
-    ripgrep
-    fd
-    eza
-    fzf
-    jq
     btop
-    tree
-    wget
     curl
+    element-desktop
+    eza
     fastfetch
+    fd
     ffmpeg
+    firefox
+    fzf
     git
     gping
     hyfetch
+    jq
     mosh
-    speedtest-cli
-    uv
-    element-desktop
-    firefox
     nautilus
+    r2modman
+    ripgrep
+    speedtest-cli
     spotify
+    tree
+    uv
     vesktop
+    wget
     wofi
   ];
 
