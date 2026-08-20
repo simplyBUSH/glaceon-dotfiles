@@ -98,6 +98,7 @@ in
       "vesktop"
       # "skim"
       "bitwarden"
+      "arduino-ide"
      ];
     brews = [
       "felixkratz/formulae/borders"
