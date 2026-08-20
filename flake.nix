@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
@@ -20,7 +21,7 @@
   };
 
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nixos-hardware, ... }: {
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nixos-hardware, chaotic, ... }: {
     darwinConfigurations."glaceon" = nix-darwin.lib.darwinSystem {
       modules = [
         ./hosts/glaceon
@@ -47,6 +48,7 @@
           home-manager.users.bush = import ./home/defaults/jolteon.nix;
           home-manager.backupFileExtension = "backup";
         }
+        chaotic.nixosModules.default
       ];
     };
 

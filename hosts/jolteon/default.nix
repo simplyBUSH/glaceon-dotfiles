@@ -8,14 +8,13 @@ in
   home-manager.extraSpecialArgs = { inherit accent; isJolteon = true; };
 
   environment.systemPackages = with pkgs; [
-  efibootmgr
-  openvpn
-  refind
+    efibootmgr
+    openvpn
+    refind
   ];
 
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.config.allowUnfree = true;
-
   system.stateVersion = "25.05";
 
   networking = {
@@ -50,6 +49,7 @@ in
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
+  time.timeZone = "Europe/Warsaw";
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
@@ -57,63 +57,69 @@ in
   ];
 
   programs ={
-    hyprland.enable = true;
-    zsh.enable = true;
     dconf.enable = true;
+    hyprland.enable = true;
     steam.enable = true;
+    xwayland.enable = true;
+    zsh.enable = true;
   };
 
   services = {
-    pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd Hyprland";
-        user = "greeter";
-        };
-      };
-    };
+    blueman.enable = true;
     openssh.enable = true;
     tailscale.enable = true;
-    sunshine = {
+
+    pipewire = {
       enable = true;
-      autoStart = false;
-      capSysAdmin = true;
-      openFirewall = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
     };
+
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+          user = "greeter";
+          };
+        };
+      };
+
     avahi = {
       enable = true;
       publish.enable = true;
       publish.userServices = true;
     };
+
     ollama = {
       enable = true;
       package = pkgs.ollama-rocm;
     };
   };
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [
-    mesa.opencl
-    ];
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [
+      mesa.opencl
+      ];
+    };
+
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+
+    uinput.enable = true;
   };
 
-  hardware.uinput.enable = true;
-  time.timeZone = "Europe/Warsaw";
-
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_cachyos-lto-znver4;
     kernelParams = [ "usbcore.autosuspend=-1" ];
     initrd.kernelModules = [ "usbhid" "hid_generic" ];
+
     loader = {
       efi.canTouchEfiVariables = false;
       systemd-boot.enable = true;
