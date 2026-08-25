@@ -67,5 +67,21 @@
         }
       ];
     };
+    homeConfigurations."bush@eevee" = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {
+        system = "aarch64-linux";
+        config.allowUnfree = true;
+      };
+      
+      extraSpecialArgs = { 
+        inherit inputs; 
+        accent = "#8B4513"; 
+        isEevee = true; 
+      };
+      
+      modules = [
+        ./home/defaults/eevee.nix
+      ];
+    };
   };
 }

@@ -1,4 +1,4 @@
-{ pkgs, lib, accent,  ... }:
+{ pkgs, lib, accent, isEevee ? false, ... }:
 let
   isDarwin = pkgs.stdenv.isDarwin;
 in
@@ -34,8 +34,10 @@ in
       q = "exit";
       sdr = if isDarwin 
         then "sudo darwin-rebuild switch --flake ~/nix-config#$(hostname -s)"
-        else "sudo nixos-rebuild switch --flake ~/nix-config#$(hostname)";
-      size = "du -sh .";
+        else if isEevee
+        then "home-manager switch --flake ~/nix-config#bush@eevee"
+        else "sudo nixos-rebuild switch --flake ~/nix-config#$(hostname)";      
+    size = "du -sh .";
       ts = "tailscale";
       vi = "nvim";
       vim = "nvim";
