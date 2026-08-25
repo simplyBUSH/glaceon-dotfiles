@@ -85,20 +85,21 @@ in
     casks = [
       "antigravity"
       "antigravity-cli"
+      "arduino-ide"
       "ayugram"
+      "bitwarden"
       "dolphin"
       "element"
       "firefox"
       "linearmouse"
       "mx-power-gadget"
+      "obs"
       "pearcleaner"
       "spotify"
       "steam"
       "tailscale-app"
       "vesktop"
       # "skim"
-      "bitwarden"
-      "arduino-ide"
      ];
     brews = [
       "felixkratz/formulae/borders"
