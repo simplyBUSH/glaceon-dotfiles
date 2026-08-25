@@ -1,8 +1,16 @@
 { pkgs, accent, ... }:
-
+let
+  isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
+in
 {
   programs.tmux = {
     enable = true;
+    package = if isDarwin then 
+      pkgs.tmux.overrideAttrs (oldAttrs: {
+        configureFlags = (oldAttrs.configureFlags or []) ++ [ "--disable-jemalloc" ];
+      })
+    else 
+      pkgs.tmux;
     terminal = "tmux-256color";
     baseIndex = 1;
     escapeTime = 0;
