@@ -24,7 +24,7 @@ in
 
     shellAliases = {
       cls = "pyroclear";
-      eevee = "mosh --server=/home/bush/.nix-profile/bin/mosh-server bush@eevee.local";
+      eevee = "mosh --server=/home/bush/.nix-profile/bin/mosh-server --bind-server=10.42.0.2 bush@eevee.local";
       clear = "pyroclear";
       gc="sudo nix-collect-garbage -d && sudo nix store optimise";
       gemini="agy";
@@ -38,7 +38,7 @@ in
         else if isEevee
         then "home-manager switch --flake ~/nix-config#bush@eevee"
         else "sudo nixos-rebuild switch --flake ~/nix-config#$(hostname)";      
-    size = "du -sh .";
+      size = "du -sh .";
       ts = "tailscale";
       vi = "nvim";
       vim = "nvim";
@@ -50,7 +50,7 @@ in
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
-      PATH = "$HOME/.cargo/bin:$PATH";
+      PATH = "$HOME/.cargo/bin${lib.optionalString isEevee ":/usr/local/sbin:/usr/sbin:/sbin"}:$PATH";
     } // lib.optionalAttrs isDarwin {
       CPPFLAGS = "-I/opt/homebrew/opt/openjdk/include";
       HOMEBREW_CELLAR = "/opt/homebrew/Cellar";
