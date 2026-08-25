@@ -24,7 +24,7 @@ in
 
     shellAliases = {
       cls = "pyroclear";
-      eevee = "mosh --server=/home/bush/.nix-profile/bin/mosh-server --bind-server=10.42.0.2 bush@eevee.local";
+      eevee = "mosh --server=/home/bush/.nix-profile/bin/mosh-server --bind-server=10.42.0.2 bush@10.42.0.2";
       clear = "pyroclear";
       gc="sudo nix-collect-garbage -d && sudo nix store optimise";
       gemini="agy";

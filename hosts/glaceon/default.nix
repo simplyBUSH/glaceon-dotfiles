@@ -99,6 +99,7 @@ in
       "steam"
       "tailscale-app"
       "vesktop"
+      "windows-app"
       # "skim"
      ];
     brews = [
