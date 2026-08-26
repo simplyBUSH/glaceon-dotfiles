@@ -3,12 +3,13 @@
 {
   programs.kitty = {
     enable = true;
-    themeFile = "Nordfox";
+    themeFile = "Carbonfox";
 
     settings = {
-      hide_window_decorations = "titlebar-only";
+      background              = "#000000";
+      #hide_window_decorations = "titlebar-only";
       macos_titlebar_color    = "#14161B";
-      window_padding_width    = "20 10 10 10";
+      window_padding_width    = "5 5 5 5";
       macos_thicken_font      = "1";
 
       confirm_os_window_close = "0";

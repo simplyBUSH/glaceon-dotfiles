@@ -21,7 +21,7 @@
       {
         plugin = nightfox-nvim;
         type = "lua";
-        config = ''vim.cmd.colorscheme("nordfox")'';
+        config = ''vim.cmd.colorscheme("carbonfox")'';
       }
 
       nvim-web-devicons
