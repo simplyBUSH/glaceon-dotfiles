@@ -22,6 +22,7 @@ in
     extraConfig = ''
       set -g status-interval   5
       set -g status-keys       vi
+      set -g allow-passthrough on
       
       set -g focus-events      off
       setw -g aggressive-resize off

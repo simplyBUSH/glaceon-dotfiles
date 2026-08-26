@@ -24,14 +24,15 @@ in
 
     shellAliases = {
       cls = "pyroclear";
-      eevee = "mosh --server=/home/bush/.nix-profile/bin/mosh-server --bind-server=10.42.0.2 bush@10.42.0.2";
+      eevee-local = "mosh --server=/home/bush/.nix-profile/bin/mosh-server --bind-server=10.42.0.2 bush@10.42.0.2";
+      eevee = "mosh --server=/home/bush/.nix-profile/bin/mosh-server eevee";
       clear = "pyroclear";
       gc="sudo nix-collect-garbage -d && sudo nix store optimise";
       gemini="agy";
       iamb = "iamb -C ~/.config"; 
       kys = "tmux kill-server";
       ll = "eza -lha --git"; 
-      ns = "nix-shell";
+      ns = "nix shell";
       q = "exit";
       sdr = if isDarwin 
         then "sudo darwin-rebuild switch --flake ~/nix-config#$(hostname -s)"
@@ -74,7 +75,11 @@ in
           ''))
           ''
             if [[ -z "$TMUX" && -n "$AUTO_TMUX" ]]; then
-                tmux attach-session -t auto 2>/dev/null || tmux new-session -s auto
+                exec tmux attach-session -t auto 2>/dev/null || exec tmux new-session -s auto
+            fi
+
+            if [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+                exec tmux attach-session -t auto 2>/dev/null || exec tmux new-session -s auto
             fi
 
             clear && ${pkgs.hyfetch}/bin/hyfetch
