@@ -5,6 +5,8 @@
     ../zsh.nix
     ../git.nix
     ../yazi.nix
+    ../kitty.nix
+    ../alacritty.nix
     ../tmux.nix
     ../nvim/core.nix
     ../nvim/lsp.nix
@@ -15,6 +17,13 @@
     username = "bush";
     homeDirectory = "/home/bush";
     stateVersion = "25.05"; 
+
+    sessionVariables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+      SUDO_EDITOR = "nvim";
+    };
+
   };
 
   programs.home-manager.enable = true;
