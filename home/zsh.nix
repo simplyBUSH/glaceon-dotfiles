@@ -75,11 +75,7 @@ in
           ''))
           ''
             if [[ -z "$TMUX" && -n "$AUTO_TMUX" ]]; then
-                exec tmux attach-session -t auto 2>/dev/null || exec tmux new-session -s auto
-            fi
-
-            if [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
-                exec tmux attach-session -t auto 2>/dev/null || exec tmux new-session -s auto
+                tmux attach-session -t auto 2>/dev/null || tmux new-session -s auto
             fi
 
             clear && ${pkgs.hyfetch}/bin/hyfetch
