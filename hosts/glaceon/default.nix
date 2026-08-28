@@ -5,9 +5,7 @@ let
 in
 {
   home-manager.extraSpecialArgs = { inherit accent; };
-  environment.systemPackages = with pkgs; [
-    raycast
-  ];
+ # environment.systemPackages = with pkgs; [ ];
 
   nix.settings.experimental-features = "nix-command flakes";
   nix.enable = false;
@@ -83,14 +81,14 @@ in
     ];
 
     casks = [
-      "antigravity"
-      "antigravity-cli"
       "arduino-ide"
       "ayugram"
       "bitwarden"
       "dolphin"
       "element"
       "firefox"
+      "gimp"
+      "karabiner-elements"
       "linearmouse"
       "mx-power-gadget"
       "obs"
@@ -104,6 +102,7 @@ in
      ];
     brews = [
       "felixkratz/formulae/borders"
+      "felixkratz/formulae/sketchybar"
       "matthart1983/tap/netwatch"
     ];
   };

@@ -28,7 +28,6 @@ in
       eevee = "mosh --server=/home/bush/.nix-profile/bin/mosh-server eevee";
       clear = "pyroclear";
       gc="sudo nix-collect-garbage -d && sudo nix store optimise";
-      gemini="agy";
       iamb = "iamb -C ~/.config"; 
       kys = "tmux kill-server";
       ll = "eza -lha --git"; 
@@ -78,8 +77,8 @@ in
                 tmux attach-session -t auto 2>/dev/null || tmux new-session -s auto
             fi
 
-            clear && ${pkgs.hyfetch}/bin/hyfetch
           ''
     ];
+    #            clear && ${pkgs.hyfetch}/bin/hyfetch
   };
 }

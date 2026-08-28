@@ -7,7 +7,7 @@
 
     settings = {
       background              = "#000000";
-      #hide_window_decorations = "titlebar-only";
+      hide_window_decorations = "titlebar-only";
       macos_titlebar_color    = "#14161B";
       window_padding_width    = "5 5 5 5";
       macos_thicken_font      = "1";

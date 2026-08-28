@@ -20,8 +20,8 @@
       image_preview.protocol = {
         type = "kitty";
         size = {
-          height = 50;
-          width = 166;
+          height = 65;
+          width = 180;
         };
       };
 
