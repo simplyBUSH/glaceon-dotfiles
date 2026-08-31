@@ -44,7 +44,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.extraSpecialArgs = { inherit inputs; isEevee = false; };
           home-manager.users.bush = import ./home/defaults/jolteon.nix;
           home-manager.backupFileExtension = "backup";
         }
