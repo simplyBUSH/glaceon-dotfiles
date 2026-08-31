@@ -77,10 +77,12 @@ in
       extraFlags = [ "--force" ];
     };
     taps = [
-#    "TheBoredTeam/boring-notch"
+     "surgedm/tap" 
+#     "TheBoredTeam/boring-notch"
     ];
 
     casks = [
+      "SurgeDM/tap/surge"
       "arduino-ide"
       "ayugram"
       "bitwarden"
@@ -99,6 +101,7 @@ in
       "vesktop"
       "windows-app"
       # "skim"
+#      "TheBoredTeam/boring-notch/boring-notch"
      ];
     brews = [
       "felixkratz/formulae/borders"

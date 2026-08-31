@@ -19,10 +19,7 @@
 
       image_preview.protocol = {
         type = "kitty";
-        size = {
-          height = 65;
-          width = 180;
-        };
+#        size = {          height = 65;          width = 180;        };
       };
 
       notifications = {

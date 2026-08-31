@@ -52,21 +52,6 @@
       ];
     };
 
-    nixosConfigurations."vmware" = nixpkgs.lib.nixosSystem {
-      system = "aarch64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./hosts/vmware
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.users.bush = import ./home/defaults/vmware.nix;
-          home-manager.backupFileExtension = "backup";
-        }
-      ];
-    };
     homeConfigurations."bush@eevee" = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {
         system = "aarch64-linux";
