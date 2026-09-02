@@ -10,6 +10,13 @@
     theme = "carbonfox";
     
     settings = {
+      window = {
+        decorations = "none";
+          padding = {
+            x = 6; 
+            y = 6; 
+          };
+        };
       font = {
         normal = {
           family = "JetBrainsMono Nerd Font";
@@ -19,6 +26,7 @@
       env = {
         LC_CTYPE = "en_US.UTF-8";
         LANG = "en_US.UTF-8";
+        AUTO_TMUX = "true";
       };
 
       colors.primary = {

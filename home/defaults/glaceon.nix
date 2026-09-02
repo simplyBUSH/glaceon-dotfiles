@@ -5,7 +5,7 @@
     ../zsh.nix
     ../git.nix
 #    ../yazi.nix
-    ../kitty.nix
+#    ../kitty.nix
     ../alacritty.nix
     ../tmux.nix
     ../nvim/core.nix

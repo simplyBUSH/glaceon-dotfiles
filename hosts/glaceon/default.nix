@@ -84,7 +84,6 @@ in
     casks = [
       "SurgeDM/tap/surge"
       "arduino-ide"
-      "ayugram"
       "bitwarden"
       "dolphin"
       "element"
@@ -96,16 +95,15 @@ in
       "obs"
       "pearcleaner"
       "spotify"
-      "steam"
       "tailscale-app"
       "vesktop"
       "windows-app"
+      "gamehub"
       # "skim"
 #      "TheBoredTeam/boring-notch/boring-notch"
      ];
     brews = [
       "felixkratz/formulae/borders"
-      "felixkratz/formulae/sketchybar"
       "matthart1983/tap/netwatch"
     ];
   };

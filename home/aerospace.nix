@@ -22,14 +22,20 @@
         "9" = "main";
         "10" = "secondary";
       };
+      on-window-detected = [
+        {
+          "if" = { window-title-regex-substring = "alacritty"; };
+          run = [ "layout tiling" ];
+        }
+      ];
 
       gaps = {
         inner.horizontal = 0;
         inner.vertical = 0;
-        outer.left = -2;
-        outer.bottom = -3;
-        outer.top = -2;
-        outer.right = -2;
+        outer.left = -1;
+        outer.bottom = -1;
+        outer.top = -1;
+        outer.right = -1;
       };
 
       mode.main.binding = {
@@ -74,12 +80,11 @@
 
         # apps
         ctrl-shift-cmd-e = "exec-and-forget open -a finder";
-        ctrl-shift-cmd-enter = "exec-and-forget env AUTO_TMUX=1 open -n -a alacritty --args -o window.startup_mode=Fullscreen";
         ctrl-shift-cmd-f = "fullscreen";
         ctrl-shift-cmd-m = "exec-and-forget open -a element";
         ctrl-shift-cmd-r = "reload-config";
         ctrl-shift-cmd-s = "exec-and-forget open -a 'System Settings'";
-        ctrl-shift-cmd-t = "exec-and-forget env AUTO_TMUX=1 open -a kitty";
+        ctrl-shift-cmd-t = "exec-and-forget /etc/profiles/per-user/$(whoami)/bin/alacritty --config-file ~/.config/alacritty/alacritty.toml";
         ctrl-shift-cmd-v = "exec-and-forget open -a vesktop";
         ctrl-shift-cmd-w = ''exec-and-forget sh -c "sleep 0.1 && open -a firefox"'';
       };
